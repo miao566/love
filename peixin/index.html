@@ -1,9 +1,60 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>打开图片示例</title>
-</head>
-<body>
-	<img src="image.jpg" alt="图片">
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Full of Love</title>
+		<style>
+			body {
+				background-color: #ffc0cb;
+				font-family: Arial, sans-serif;
+				text-align: center;
+			}
+			h1 {
+				font-size: 72px;
+				color: white;
+				margin-top: 150px;
+			}
+			p {
+				font-size: 36px;
+				color: white;
+				margin-top: 30px;
+			}
+			.heart {
+			  position: relative;
+			  width: 140px;
+			  height: 120px;
+			}
+			.heart:before,
+			.heart:after {
+			  position: absolute;
+			  content: "";
+			  left: 60px;
+			  top: 0;
+			  width: 60px;
+			  height: 100px;
+			  background: pink;
+			  -webkit-transform: rotate(-45deg);
+			          transform: rotate(-45deg);
+			  -webkit-transform-origin: 0 100%;
+			          transform-origin: 0 100%;
+			}
+			.heart:after {
+			  left: 0;
+			  -webkit-transform: rotate(45deg);
+			          transform: rotate(45deg);
+			  -webkit-transform-origin: 100% 100%;
+			          transform-origin: 100% 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>To My Love</h1>
+		<p>You are the sun in my day,<br> 
+		   the moon in my night,<br> 
+		   the joy in my heart,<br> 
+		   and the love of my life.<br>
+		   I love you more than words can express.<br>
+		   Happy Valentine's Day!</p>
+		<div class="heart"></div>
+	</body>
 </html>
