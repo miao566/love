@@ -5,15 +5,16 @@
 </head>
 <body>
     <h1>Random Card Code:</h1>
-    <p>{{ cardCode }}</p>
+    <p id="cardCode"></p>
 
     <script>
         var cardCodes = [
             "cardCode1",
             "cardCode2",
             "cardCode3",
-            "1111",
-            "2222"
+            “111111111”,
+            "222222222"
+            
             // 在此处继续添加卡密
         ];
 
@@ -30,7 +31,7 @@
             sessionStorage.lastSelectedLine = cardCodes.indexOf(selectedCode);
 
             // 显示卡密
-            document.getElementById("cardCode").innerText = selectedCode;
+            document.getElementById("cardCode").textContent = selectedCode;
         }
 
         getRandomCode();
