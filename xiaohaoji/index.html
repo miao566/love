@@ -15,22 +15,20 @@
             // 在此处继续添加卡密
         ];
 
-        function getRandomCode() {
-            if (sessionStorage.lastSelectedLine) {
-                // 从卡密列表中删除上次选择的行
-                cardCodes.splice(sessionStorage.lastSelectedLine, 1);
-            }
+        var usedCodes = [];  // 存储已使用过的卡密
 
+        function getRandomCode() {
             if (cardCodes.length === 0) {
                 document.getElementById("cardCode").textContent = "没有卡密了";
                 return;
             }
 
             // 随机选择一行卡密
-            var selectedCode = cardCodes[Math.floor(Math.random() * cardCodes.length)].trim();
+            var randomIndex = Math.floor(Math.random() * cardCodes.length);
+            var selectedCode = cardCodes[randomIndex].trim();
 
-            // 将本次选择的行数存储在sessionStorage中
-            sessionStorage.lastSelectedLine = cardCodes.indexOf(selectedCode);
+            // 将已使用的卡密移动到usedCodes数组中
+            usedCodes.push(cardCodes.splice(randomIndex, 1)[0]);
 
             // 显示卡密
             document.getElementById("cardCode").textContent = selectedCode;
