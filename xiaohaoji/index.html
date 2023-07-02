@@ -11,10 +11,7 @@
         var cardCodes = [
             "cardCode1",
             "cardCode2",
-            "cardCode3",
-            “111111111”,
-            "222222222"
-            
+            "cardCode3"
             // 在此处继续添加卡密
         ];
 
@@ -22,6 +19,11 @@
             if (sessionStorage.lastSelectedLine) {
                 // 从卡密列表中删除上次选择的行
                 cardCodes.splice(sessionStorage.lastSelectedLine, 1);
+            }
+
+            if (cardCodes.length === 0) {
+                document.getElementById("cardCode").textContent = "没有卡密了";
+                return;
             }
 
             // 随机选择一行卡密
