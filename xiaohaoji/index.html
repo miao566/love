@@ -4,7 +4,7 @@
     <title>Random Card Code</title>
 </head>
 <body>
-    <h1>小号:</h1>
+    <h1>测试:</h1>
     <p id="cardCode"></p>
 
     <script>
@@ -14,8 +14,8 @@
             "cardCode3"
             // 在此处继续添加卡密
         ];
-
-        var usedCodes = [];  // 存储已使用过的卡密
+        
+        var usedCodes = JSON.parse(sessionStorage.getItem('usedCodes')) || [];
 
         function getRandomCode() {
             if (cardCodes.length === 0) {
@@ -23,12 +23,25 @@
                 return;
             }
 
-            // 随机选择一行卡密
-            var randomIndex = Math.floor(Math.random() * cardCodes.length);
-            var selectedCode = cardCodes[randomIndex].trim();
+            // 获取可用卡密列表（剔除已使用的卡密）
+            var availableCodes = cardCodes.filter(function(code) {
+                return usedCodes.indexOf(code) === -1;
+            });
 
-            // 将已使用的卡密移动到usedCodes数组中
-            usedCodes.push(cardCodes.splice(randomIndex, 1)[0]);
+            if (availableCodes.length === 0) {
+                document.getElementById("cardCode").textContent = "没有卡密了";
+                return;
+            }
+
+            // 随机选择一行卡密
+            var randomIndex = Math.floor(Math.random() * availableCodes.length);
+            var selectedCode = availableCodes[randomIndex].trim();
+
+            // 将卡密添加到已使用列表
+            usedCodes.push(selectedCode);
+
+            // 存储更新后的已使用卡密列表
+            sessionStorage.setItem('usedCodes', JSON.stringify(usedCodes));
 
             // 显示卡密
             document.getElementById("cardCode").textContent = selectedCode;
