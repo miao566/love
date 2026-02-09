@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VPN使用指南 - 简单教学</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* 头部 */
+        header {
+            background: #2c5aa0;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            margin-bottom: 30px;
+        }
+        
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        /* 主内容区 */
+        .section {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        
+        .section-title {
+            color: #2c5aa0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eaeaea;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title i {
+            margin-right: 10px;
+        }
+        
+        /* 步骤列表 */
+        .steps {
+            margin: 20px 0;
+        }
+        
+        .step {
+            margin-bottom: 25px;
+            padding-left: 50px;
+            position: relative;
+        }
+        
+        .step-num {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 35px;
+            height: 35px;
+            background: #2c5aa0;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .step h3 {
+            color: #2c5aa0;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+        
+        /* 提示框 */
+        .tip-box {
+            background: #e8f0fe;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #2c5aa0;
+        }
+        
+        .tip-box strong {
+            color: #2c5aa0;
+        }
+        
+        /* 常见问题 */
+        .faq-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 8px;
+            font-size: 17px;
+        }
+        
+        /* 简单导航 */
+        .simple-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px 0;
+            gap: 10px;
+        }
+        
+        .nav-btn {
+            background: #2c5aa0;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        
+        .nav-btn:hover {
+            background: #1d3f73;
+        }
+        
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 30px;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #ddd;
+        }
+        
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .step {
+                padding-left: 40px;
+            }
+            
+            .simple-nav {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-shield-alt"></i> VPN使用指南</h1>
+            <p>简单易懂的VPN使用教学，保护您的在线隐私</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <!-- 什么是VPN -->
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-question-circle"></i> 什么是VPN？</h2>
+            <p>VPN（虚拟专用网络）是一种保护您在线隐私的工具。它通过加密您的网络连接并将您的流量通过远程服务器路由，从而隐藏您的真实IP地址。</p>
+            
+            <div class="tip-box">
+                <strong>简单比喻：</strong> VPN就像一条加密隧道，您的数据通过这条隧道安全传输，外界无法看到您在隧道内的活动。
+            </div>
+        </section>
+        
+        <!-- 如何使用VPN -->
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-cogs"></i> 如何使用VPN？</h2>
+            <p>只需5个简单步骤：</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <h3>选择VPN服务</h3>
+                    <p>选择一个信誉良好的VPN提供商。建议选择付费服务，免费VPN可能有安全和隐私风险。</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <h3>注册账户</h3>
+                    <p>在VPN提供商的网站上注册账户，通常需要邮箱和支付信息。</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <h3>下载应用程序</h3>
+                    <p>下载并安装适合您设备（电脑、手机、平板）的VPN应用程序。</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <h3>登录并连接</h3>
+                    <p>打开应用程序，用您的账户登录，选择一个服务器位置，然后点击"连接"按钮。</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-num">5</div>
+                    <h3>验证连接</h3>
+                    <p>连接后，访问一个IP查询网站（如ip.cn），确认显示的IP地址已变更，说明VPN已生效。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 主要用途 -->
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-list"></i> VPN主要用途</h2>
+            
+            <div class="step">
+                <div class="step-num"><i class="fas fa-wifi"></i></div>
+                <h3>保护公共Wi-Fi安全</h3>
+                <p>在咖啡店、机场等公共场所使用Wi-Fi时，VPN可以防止他人窃取您的数据。</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-num"><i class="fas fa-globe"></i></div>
+                <h3>访问受限内容</h3>
+                <p>绕过地理限制，访问其他国家/地区的视频、音乐和网站内容。</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-num"><i class="fas fa-user-secret"></i></div>
+                <h3>增强在线隐私</h3>
+                <p>防止网络服务商、广告商和网站跟踪您的在线活动。</p>
+            </div>
+        </section>
+        
+        <!-- 重要提醒 -->
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-exclamation-triangle"></i> 重要提醒</h2>
+            
+            <div class="tip-box">
+                <p><strong>1. VPN不是100%匿名：</strong> 虽然VPN可以隐藏您的IP地址，但不能完全匿名。如果您从事非法活动，仍然可能被追踪。</p>
+            </div>
+            
+            <div class="tip-box">
+                <p><strong>2. 选择可靠的VPN服务：</strong> 查看VPN提供商的隐私政策，确保他们不会记录您的活动日志。</p>
+            </div>
+            
+            <div class="tip-box">
+                <p><strong>3. 遵守当地法律：</strong> 在某些国家/地区，VPN使用可能受到限制。请了解并遵守您所在地的法律法规。</p>
+            </div>
+        </section>
+        
+        <!-- 常见问题 -->
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-question"></i> 常见问题</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">VPN会减慢网速吗？</div>
+                <p>可能会稍微减慢，因为您的数据需要加密并通过远程服务器传输。但好的VPN服务影响很小。</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">使用VPN合法吗？</div>
+                <p>在大多数国家/地区是合法的，但请遵守当地法律。不要使用VPN从事非法活动。</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">我应该一直开启VPN吗？</div>
+                <p>在公共Wi-Fi下建议开启。在家用可信网络上，可根据需要开启或关闭。</p>
+            </div>
+        </section>
+        
+        <!-- 简单导航 -->
+        <div class="simple-nav">
+            <button class="nav-btn" onclick="window.scrollTo(0, 0)"><i class="fas fa-arrow-up"></i> 回到顶部</button>
+            <button class="nav-btn" onclick="location.reload()"><i class="fas fa-redo"></i> 刷新页面</button>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2023 VPN使用指南 - 仅供教育目的</p>
+            <p style="margin-top: 10px; font-size: 13px;">提示：本网站仅提供VPN使用教学，不推荐任何特定VPN服务</p>
+        </div>
+    </footer>
+    
+    <script>
+        // 简单滚动动画
+        document.querySelectorAll('.nav-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 200);
+            });
+        });
+        
+        // 自动展开第一个FAQ项
+        document.querySelector('.faq-item').style.paddingTop = '0';
+    </script>
+</body>
+  </html>
